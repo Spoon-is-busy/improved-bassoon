@@ -16,25 +16,25 @@
       const canvas = document.getElementById("pong");
       const context = canvas.getContext("2d");
 
-      // Initial paddle positions
+      
       let player1Y = canvas.height / 2 - 50;
       let player2Y = canvas.height / 2 - 50;
 
-      // Paddle dimensions
+      
       const paddleWidth = 10;
       const paddleHeight = 100;
 
-      // Ball position and speed
+      
       let ballX = canvas.width / 2;
       let ballY = canvas.height / 2;
       let ballSpeedX = 5;
       let ballSpeedY = 5;
 
-      // Keyboard input variables
+      
       let player2Up = false;
       let player2Down = false;
 
-      // Update paddle positions
+      
       function movePaddles() {
         if (player2Up) {
           player2Y -= 5;
@@ -43,9 +43,8 @@
           player2Y += 5;
         }
 
-        // AI-controlled player 1 paddle
-        // Adjust the AI difficulty by changing the value in the following line (higher value makes it harder for the player)
-        const aiDifficulty = 4;
+        
+        const aiDifficulty = -1;
         const paddle1Center = player1Y + paddleHeight / 2;
         if (paddle1Center < ballY - aiDifficulty) {
           player1Y += 5;
