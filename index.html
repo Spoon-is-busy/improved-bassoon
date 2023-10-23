@@ -53,19 +53,19 @@
         }
       }
 
-      // Update game elements
+      
       function update() {
         movePaddles();
 
         ballX += ballSpeedX;
         ballY += ballSpeedY;
 
-        // Ball collisions with top and bottom walls
+        
         if (ballY < 0 || ballY > canvas.height) {
           ballSpeedY = -ballSpeedY;
         }
 
-        // Ball collisions with paddles
+        
         if (
           ballX <= paddleWidth &&
           ballY > player1Y &&
@@ -82,32 +82,32 @@
           ballSpeedX = -ballSpeedX;
         }
 
-        // Ball out of bounds
+        
         if (ballX < 0 || ballX > canvas.width) {
-          // Reset the ball's position
+          
           ballX = canvas.width / 2;
           ballY = canvas.height / 2;
           ballSpeedX = 5;
         }
       }
 
-      // Game loop
+      
       function gameLoop() {
         context.clearRect(0, 0, canvas.width, canvas.height);
 
-        // Draw paddles
+        
         context.fillStyle = "white";
         context.fillRect(0, player1Y, paddleWidth, paddleHeight);
         context.fillRect(canvas.width - paddleWidth, player2Y, paddleWidth, paddleHeight);
 
-        // Draw the ball
+        
         context.fillRect(ballX, ballY, 10, 10);
 
         update();
         requestAnimationFrame(gameLoop);
       }
 
-      // Keyboard event listeners
+      
       document.addEventListener("keydown", function (e) {
         if (e.key === "ArrowUp") {
           player2Up = true;
@@ -126,7 +126,7 @@
         }
       });
 
-      // Start the game loop
+      
       gameLoop();
     </script>
     <h7> develuped by bryson so dont copy pls :~/ </h7>
